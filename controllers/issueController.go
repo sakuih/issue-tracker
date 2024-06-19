@@ -1,29 +1,37 @@
 package controllers
 
 import (
-  
+	"github.com/gin-gonic/gin"
 )
 
-
-
 func GetAllIssues() gin.HandlerFunc {
-  return func (c *gin.Context){
-    c.JSON(gin.H{"Success"})
-  }
+	return func(c *gin.Context) {
+		c.JSON(200, gin.H{"html": "Success"})
+	}
 
 }
 
 func GetIssue() gin.HandlerFunc {
+	return func(c *gin.Context) {
 
+	}
 }
 
-func postIssue() gin.HandlerFunc {
+func UpdateIssue() gin.HandlerFunc {
+	return func(c *gin.Context) {
 
+	}
 }
 
-func deleteIssue() gin.HandlerFunc {
+func PostIssue() gin.HandlerFunc {
+	return func(c *gin.Context) {
 
+	}
 }
 
+func DeleteIssue() gin.HandlerFunc {
+	return func(c *gin.Context) {
 
+	}
 
+}

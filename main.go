@@ -1,36 +1,34 @@
 package main
 
 import (
-  "fmt"
+  //"fmt"
+  //"net/http"
   "github.com/gin-gonic/gin"
+  helpers "issue-tracker.com/helpers"
+  routes "issue-tracker.com/routes"
+  "github.com/joho/godotenv"
+  "log"
 )
 
 func main() {
 
-  api := router.Group("/api")
+  err := godotenv.Load(".env")
+  if err != nil {
+    log.Fatal(err)
+  }
+  helpers.ConnectToDb()
+  gin.SetMode(gin.ReleaseMode)
 
   router := gin.New()
   router.Use(gin.Logger())
-
-
+  //api := router.Group("/api")
   routes.UserRoutes(router)
 
-  api.GET("/", getData)
+  
+  router.Run(":8000")
 
 
 }
-
-func getData(c *gin.Context) {
-  c.Header("Content-Type", "application/json")
-
-  c.JSON(http.StatusOK, gin.H {
-    "message": "GetData"
-  })
-
-
-}
-
-
 
 
 
