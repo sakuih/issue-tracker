@@ -2,6 +2,9 @@ HELP.md
 .env
 .idea
 main
+issues.db
+issue-tracker
+
 
 
 
